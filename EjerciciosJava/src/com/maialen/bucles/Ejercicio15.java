@@ -39,7 +39,6 @@ public class Ejercicio15 {
 		}else{
 			System.out.println("Se siente no te quedan intentos, el numero era "+x);
 		}
-
+		
 	}
-
 }
