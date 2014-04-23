@@ -9,39 +9,51 @@ public class Ejercicio19 {
 	 usuario. Finalmente, mostrar el resultado por pantalla.
 	 */
 	public static void main(String[] args) {
-		int[] listaNumeros1=new int[10];
-		int[] listaNumeros2=new int[7];
-		//int[] listaNumeros=new int[Math.max(listaNumeros1.length,listaNumeros2.length)];
-		int[] listaNumeros;
-		int x;
-		
-		for(int i=0; i<listaNumeros1.length;i++){
-			x  = (int) (100*Math.random()+1);
-			listaNumeros1[i]=x;
+		int[] v1=new int[10];
+		int[] v2=new int[7];
+		int[] v3=new int[Math.max( v1.length,v2.length)];
+		// Inicializar el array de nœmeros
+		for (int i = 0; i < v1.length; i++) {
+			v1[i] = (int) (10*Math.random()+1);
 		}
-		for(int i=0; i<listaNumeros2.length;i++){
-			x  = (int) (100*Math.random()+1);
-			listaNumeros2[i]=x;
-		}
+
 		
-		if(listaNumeros1.length<listaNumeros2.length){
-			listaNumeros=listaNumeros2;
-			for(int i=0; i<listaNumeros1.length; i++){
-				listaNumeros[i]=listaNumeros[i]+listaNumeros1[i];
+		// Inicializar el array de nœmeros
+		for (int i = 0; i < v2.length; i++) {
+			v2[i] = (int) (10*Math.random()+1);
+		}
+
+		if(v1.length > v2.length) {
+			v3 = new int[v1.length];
+			// Sumar los dos arrays
+			for (int i = 0; i < v2.length; i++) {
+				v3[i] = v1[i] + v2[i];
 			}
-			
-		}else{
-			listaNumeros=listaNumeros1;
-			for(int i=0; i<listaNumeros2.length; i++){
-				listaNumeros[i]=listaNumeros[i]+listaNumeros2[i];
+
+			// A–adir los elementos restantes
+			for (int i = v2.length; i < v3.length; i++) {
+				v3[i] = v1[i];
 			}
-			
+		} else {
+			v3 = new int[v2.length];
+			// Sumar los dos arrays
+			for (int i = 0; i < v1.length; i++) {
+				v3[i] = v1[i] + v2[i];
+			}
+
+			// A–adir los elementos restantes
+			for (int i = v1.length; i < v3.length; i++) {
+				v3[i] = v2[i];
+			}
 		}
-		
-		System.out.println("array 1 "+Arrays.toString(listaNumeros1));
-		System.out.println("array 2 "+Arrays.toString(listaNumeros2));
-		System.out.println("sumados "+Arrays.toString(listaNumeros));
-		
+
+		// Imprimir el array resultante
+		System.out.println("array 1 "+Arrays.toString(v1));
+		System.out.println("array 2 "+Arrays.toString(v2));
+		System.out.println("concatenados "+Arrays.toString(v3));
+
+		// System.out.println(Arrays.toString(v3));
+
 	}
 
 }
