@@ -1,4 +1,4 @@
-package Array;
+package com.maialen.arrays;
 import java.util.Arrays;
 public class Ejercicio16 {
 
