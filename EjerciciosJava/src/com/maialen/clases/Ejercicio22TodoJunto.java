@@ -29,11 +29,9 @@ public class Ejercicio22TodoJunto {
 	public static ArrayList<Integer> divisoresPrimos(int num){
 		
 		ArrayList<Integer> lista = new ArrayList<Integer>();
-		int numIndices=1;
 		lista.add(1);
 		for(int i=2; i<=num;i++){
 			if(esPrimo(i)){
-				numIndices++;
 				lista.add(new Integer(i));
 			}
 		}
