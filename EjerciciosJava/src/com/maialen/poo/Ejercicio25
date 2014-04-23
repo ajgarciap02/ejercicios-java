@@ -12,3 +12,5 @@ y tres métodos:
 
 y construir una clase PruebaComplejo que contenga un método principal 
 que trabaje con instancias de la clase Complejo.
+
+Añadir una variable que diga cuantas instancias se han creado

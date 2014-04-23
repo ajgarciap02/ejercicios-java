@@ -36,6 +36,13 @@ public class PruebaComplejo {
 		num3.asignar(real, ima);
 		System.out.println(num3.toString());
 		
+		System.out.println("sumando dos complejos");
+		Complejo num4 = Complejo.sumar(num2, num3);
+		System.out.println(num4.toString());
+		
+		
+		System.out.println("el numero de instancias son: "+Complejo.numInstancias());
+		
 	}
 
 }
