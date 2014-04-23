@@ -1,0 +1,14 @@
+EJERCICIO 25
+Construir una clase Complejo con dos atributos:
+
+	pReal: parte real de tipo double
+	pImag: parte imaginaria también de tipo double
+	
+y tres métodos:
+
+	void asignar(double x, double y)
+	void sumar(Complejo b)
+	void toString
+
+y construir una clase PruebaComplejo que contenga un método principal 
+que trabaje con instancias de la clase Complejo.

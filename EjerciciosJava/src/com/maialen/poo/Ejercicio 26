@@ -1,0 +1,15 @@
+EJERCICIO 26
+Construir una clase Racional que permita representar y manipular números racionales. 
+Un número racional permite representar la relación a/b entre dos números enteros siendo a 
+el numerador y b el denominador (distinto de cero). Se deben implementar los siguientes 
+métodos para la clase Racional:
+
+void asignaNumerador(int x)
+void asignaDenominador(int y)
+void imprimir()
+String toString()
+Racional suma(Racional b)
+Racional resta(Racional b)
+Racional producto(Racional b)
+Racional division(Racional b)
+boolean esIgual(Racional b)
