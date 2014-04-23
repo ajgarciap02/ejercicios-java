@@ -23,6 +23,14 @@ public class ClasePrincipal {
 		lista= calcular.divisoresPrimos();
 		
 		System.out.println(Arrays.toString(lista.toArray()));
+		
+		
+		System.out.println("Introduce otro numero (con clase de utilidad):");
+		
+		num = entrada.nextInt();
+		lista= PrimosClaseUtilidades.divisoresPrimos(num);
+		
+		System.out.println(Arrays.toString(lista.toArray()));
 
 	}
 
