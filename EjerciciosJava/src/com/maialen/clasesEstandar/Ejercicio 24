@@ -1,0 +1,12 @@
+EJERCICIO 24
+Verificar si una cadena de texto almacenada en una variable nif, es un NIF correcto o no. 
+Si lo es, se mostrará por consola su parte numérica; si no lo es se mostrará el mensaje 
+"NIF no valido". Se tendrá en cuenta lo siguiente:
+
+Suponer que los NIFs tienen 8 dígitos y, a continuación, una letra (no importa que sea mayúscula o minúscula).
+Recomendaciones:
+
+Usar el método length() de java.lang.String para conocer el número de caracteres de una cadena de texto.
+Usar el método estático isLetter(char c) de java.lang.Character para comprobar que un carácter es una letra.
+Usar el método estático isDigit(char c) de java.lang.Character para comprobar que un carácter es un dígito.
+Usar el método substring(int inicio, int fin) de java.lang.String para obtener la parte numérica del NIF.
