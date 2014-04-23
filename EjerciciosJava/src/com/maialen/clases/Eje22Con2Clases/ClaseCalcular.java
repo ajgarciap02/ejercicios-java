@@ -1,4 +1,4 @@
-package com.maialen.clases.conDos;
+package com.maialen.clases.Eje22Con2Clases;
 
 import java.util.ArrayList;
 
@@ -13,12 +13,18 @@ public class ClaseCalcular {
 	If you are sure that the definition of the method will never be changed or overridden. As static methods can not be overridden.
 	 */
 	
+	private int numero;
 	
-	public static ArrayList<Integer> divisoresPrimos(int num){
+	public ClaseCalcular(int num){
+		
+		this.numero=num;
+	}
+	
+	public  ArrayList<Integer> divisoresPrimos(){
 		
 		ArrayList<Integer> lista = new ArrayList<Integer>();
 		lista.add(1);
-		for(int i=2; i<=num;i++){
+		for(int i=2; i<=this.numero;i++){
 			if(esPrimo(i)){
 				lista.add(new Integer(i));
 			}

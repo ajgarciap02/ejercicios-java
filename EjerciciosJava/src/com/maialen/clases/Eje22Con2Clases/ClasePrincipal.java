@@ -1,4 +1,4 @@
-package com.maialen.clases.conDos;
+package com.maialen.clases.Eje22Con2Clases;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -16,8 +16,11 @@ public class ClasePrincipal {
 		System.out.println("Introduce un numero (con dos clases):");
 		Scanner entrada = new Scanner(System.in);
 		num = entrada.nextInt();
+		
+		ClaseCalcular calcular=new ClaseCalcular(num);
+		
 		ArrayList<Integer> lista ;
-		lista=ClaseCalcular.divisoresPrimos(num);
+		lista= calcular.divisoresPrimos();
 		
 		System.out.println(Arrays.toString(lista.toArray()));
 
