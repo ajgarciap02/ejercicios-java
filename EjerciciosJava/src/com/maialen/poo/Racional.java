@@ -3,8 +3,8 @@ package com.maialen.poo;
 
 public class Racional {
 
-	private int numerador=0;
-	private int denominador=1;
+	private Integer numerador=0;
+	private Integer denominador=1;
 	
 	public void asignaNumerador(int x){
 		this.numerador=x;
@@ -25,16 +25,36 @@ public class Racional {
 		return cadena;
 	}
 	public Racional suma(Racional b){
+		int numer=b.getNumerador()*this.denominador;
+		this.numerador*=b.getDenominador();
+		this.denominador*=b.getDenominador();
+		this.numerador+=numer;
+		normalizar();
 		
 		return this;
 	}
 	public Racional resta(Racional b){
+		Integer numer=b.getNumerador()*this.denominador;
+		this.numerador*=b.getDenominador();
+		this.denominador*=b.getDenominador();
+		this.numerador-=numer;
+		normalizar();
+		
 		return this;
 	}
 	public Racional producto(Racional b){
+		
+		this.numerador*=b.getNumerador();
+		this.denominador*=b.getDenominador();
+		normalizar();
+		
 		return this;
 	}
 	public Racional division(Racional b){
+		this.numerador*=b.getDenominador();
+		this.denominador*=b.getNumerador();
+		
+		normalizar();
 		return this;
 	}
 	public boolean esIgual(Racional b){
@@ -42,17 +62,16 @@ public class Racional {
 	}
 	public void normalizar(){
 		boolean encontrado=false;
-		int div=Math.max(this.numerador, this.denominador);
+		Integer div=Math.max(this.numerador, this.denominador);
 		while(div>1 && !encontrado){
 			encontrado=(this.numerador%div==0 && this.denominador%div==0);
-			div--;
+			if(!encontrado){
+				div--;
+			}
 		}
 		this.denominador/=div;
-		this.numerador/=div;
-		
+		this.numerador/=div;	
 	}
-	
-	
 	
 	//getters y setters
 	

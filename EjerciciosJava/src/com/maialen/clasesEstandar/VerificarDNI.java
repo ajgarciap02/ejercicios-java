@@ -1,7 +1,7 @@
 //Ejercicio 24
 package com.maialen.clasesEstandar;
-
-public class VerificarDNI {
+//al ser abstracta no se puede instanciar
+public abstract class VerificarDNI {
 
 	private static String letras= "TRWAGMYFPDXBNJZSQVHLCKE";
 	
@@ -15,11 +15,9 @@ public class VerificarDNI {
 		dni=dni.toUpperCase();
 		if(dni.length()==9 ){
 			letra=dni.charAt(8);
-			
 			if(Character.isLetter(letra)){
 				numerosDNI=Integer.parseInt(dni.substring(0, dni.length()-1));	
 				posicion=numerosDNI % 23;
-				
 				resultado=letras.charAt(posicion)==letra;
 				System.out.println(letras.charAt(posicion));
 			}else{
