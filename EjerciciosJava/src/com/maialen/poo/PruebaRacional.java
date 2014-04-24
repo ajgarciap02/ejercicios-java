@@ -29,13 +29,29 @@ public class PruebaRacional {
 		
 		//////////////////////////////////////
 		
-		System.out.println("Prueba de suma 1 + 2");
+		System.out.println("Prueba de suma 1/2 + 3/4");
 		
 		System.out.println(rac1.suma(rac2).toString());
 		
-		System.out.println("Prueba de resta 1 - 2");
+		System.out.println("Prueba de resta 5/4 - 3/4");
 		
 		System.out.println(rac1.resta(rac2).toString());
+		
+		System.out.println("Prueba de producto 1/2 * 7/13");
+		
+		System.out.println(rac1.producto(rac3).toString());
+		
+		System.out.println("Prueba de division 7/26 / 7/13");
+		
+		System.out.println(rac1.division(rac3).toString());
+		
+		System.out.println("Prueba de comparacion 1/2 == 7/13");
+		
+		System.out.println(rac1.esIgual(rac3));
+		
+		System.out.println("Prueba de comparacion 1/2 == 1/2");
+		
+		System.out.println(rac1.esIgual(rac1));
 		
 	}
 
