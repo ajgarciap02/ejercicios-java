@@ -1,42 +1,48 @@
 package com.maialen.fizzbuzz;
 
+import java.util.ArrayList;
+
+import com.maialen.validadores.Buzz;
+import com.maialen.validadores.Fizz;
+import com.maialen.validadores.Validador;
+
 public class FizzBuzz {
+	private ArrayList<Validador> validadores;
 	
-	public String calcular(int num){
+	public FizzBuzz() {
+		validadores = new ArrayList<Validador>();
+		validadores.add(new Fizz());
+		validadores.add(new Buzz());
+	}
+	
+	public String calcular(int num) {
 		String res="";
 		
-		for(int i=1; i<=num; i++)
-		{
-			res+=obtenerTexto(i)+" ";	
+		for(int i=1; i<=num; i++) {
+			if (i != 1) {
+				res += " ";
+			}
+			res += obtenerTexto(i);	
 		}
 		
 		return res;
 		
 	}
 	
-	public boolean divisor3(int num){
-		
-		return num%3==0;
-		
-	}
-	public boolean divisor5(int num){
-		
-		return num%5==0;
-		
-	}
 	public String obtenerTexto(int num){
-		String pal="";
+		String pal = "";
 		
-		if(divisor3(num)){
-			pal+="Fizz";
-		}
-		if(divisor5(num)){
-			pal+="Buzz";
-		}else {
-			if(!divisor3(num)){
-				pal=String.valueOf(num);
+		for (Validador validador : validadores){
+			if (validador.validar(num)){
+				pal += validador.getOutput();
 			}
 		}
+		
+		if (pal.length() == 0){
+			pal += String.valueOf(num);
+		}
+		
+		
 		return pal;
 	}
 	
