@@ -1,13 +1,18 @@
 package com.maialen.validadores;
 
-public class Fizz extends Validador{
+import com.maialen.interfaces.IValidador;
 
-	public Fizz(){
-		super("Fizz");
+public class Fizz implements IValidador{
+
+	private int numero=3;
+	private String output="Fizz";
+	
+	public String getOutput(){
+		return output;
 	}
 	
 	public boolean validar(int num){
-		return num % 3 == 0;
+		return num % numero == 0;
 	}
 	
 }

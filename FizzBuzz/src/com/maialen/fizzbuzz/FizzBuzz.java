@@ -2,15 +2,16 @@ package com.maialen.fizzbuzz;
 
 import java.util.ArrayList;
 
+import com.maialen.interfaces.IValidador;
 import com.maialen.validadores.Buzz;
 import com.maialen.validadores.Fizz;
 import com.maialen.validadores.Validador;
 
 public class FizzBuzz {
-	private ArrayList<Validador> validadores;
+	private ArrayList<IValidador> validadores;
 	
 	public FizzBuzz() {
-		validadores = new ArrayList<Validador>();
+		validadores = new ArrayList<IValidador>();
 		validadores.add(new Fizz());
 		validadores.add(new Buzz());
 	}
@@ -32,7 +33,7 @@ public class FizzBuzz {
 	public String obtenerTexto(int num){
 		String pal = "";
 		
-		for (Validador validador : validadores){
+		for (IValidador validador : validadores){
 			if (validador.validar(num)){
 				pal += validador.getOutput();
 			}
