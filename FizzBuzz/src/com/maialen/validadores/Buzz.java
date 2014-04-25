@@ -1,18 +1,14 @@
 package com.maialen.validadores;
 
-import com.maialen.interfaces.IValidador;
-
-public class Buzz implements IValidador{
-
-	private int numero=5;
-	private String output="Buzz";
+public class Buzz extends Validador{
 	
-	public String getOutput(){
-		return output;
+	
+	public Buzz(){
+		super("Buzz", 5);
 	}
-	
+	/* solo si el, metodo es abstracta
 	public boolean validar(int num){
-		return num % numero == 0;
+		return num % 5 == 0;
 	}
-	
+	*/
 }
