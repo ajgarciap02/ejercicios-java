@@ -1,0 +1,29 @@
+EJERCICIO 30
+Desarrollar una clase Empresa cuyos datos miembro sean un nombre, un tamaño y un array de empleados 
+(la clase Empleado se pide en el siguiente ejercicio). El tamaño de la empresa es inmutable. 
+Para esta clase se piden los siguientes constructores y métodos:
+
+El constructor Empresa() que recibe como argumentos una cadena de texto nombre y un valor entero tamaño, 
+y construye un nuevo objeto de la clase Empresa. El tamaño del array de empleados viene dado por el valor de la variable tamaño.
+Los métodos de acceso getNombre() y getTamaño(), devuelven respectivamente el nombre y el tamaño de la empresa.
+El método de acceso getEmpleado(), que recibe como argumento un número entero menor que el tamaño de la empresa, 
+y devuelve el correspondiente campo del array de empleados.
+El método despideEmpleado(), que recibe como argumento un número entero menor que el tamaño de la empresa, 
+y asigna null al correspondiente campo del array de empleados.
+
+EJERCICIO 31
+Desarrollar una clase Empleado cuyos datos miembro sean una empresa, un nombre, un sueldo y un número de empleado. 
+Estos datos han de ser protegidos (protected). Además, el número de empleado y la empresa son inmutables. 
+Para esta clase se piden los siguientes constructores y métodos:
+
+El constructor Empleado() que recibe como argumentos una referencia a un objeto Empresa, una cadena de texto 
+nombre y un valor entero sueldo. El número de empleado se crea de manera única por cada empleado de la empresa, 
+utilizando para ello una variable contador perteneciente a la clase Empresa.
+El constructor protegido Empleado(), que recibe como argumentos una referencia a un objeto Empresa, una cadena de 
+texto nombre, un valor entero sueldo y un número de empleado.
+Los métodos de acceso getNombre(), getSueldo() y getNumEmpleado().
+Los métodos modificadores setNombre() y setSueldo().
+El método de impresión por pantalla toString(), que devuelva una cadena con el número, nombre y sueldo del empleado.
+El método aumentar sueldo, que recibe como argumento un número entero N y modifica el sueldo aumentándolo un N%. 
+Éste método no puede ser modificado por clases derivadas.
+El método despedir(), que elimina el empleado actual de la empresa donde trabaja.
