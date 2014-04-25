@@ -5,7 +5,7 @@ import java.util.ArrayList;
 import com.maialen.interfaces.IValidador;
 import com.maialen.validadores.Buzz;
 import com.maialen.validadores.Fizz;
-import com.maialen.validadores.Validador;
+
 
 public class FizzBuzz {
 	private ArrayList<IValidador> validadores;
