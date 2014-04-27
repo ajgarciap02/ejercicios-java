@@ -1,6 +1,9 @@
 package com.maialen.clases;
 
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+
 
 import com.maialen.interfaces.InterfazEmpleado;
 import com.maialen.interfaces.InterfazEmpresa;
@@ -12,32 +15,51 @@ public class Empresa implements InterfazEmpresa{
 	private String nombre;
 	private int tamano;
 	
-	private int contador=0;
-	private int numerEmpleado=0;
+	private int contador=0;//catidad de empleados empleados en el momento actual
+	private int numerEmpleado=0; //numero para identificar al empleado, la cantidad que ha habido
 	
 	
-	ArrayList<InterfazEmpleado> listaEmpleados=new ArrayList<InterfazEmpleado>();
-	//private InterfazEmpleado[] empleados;
+	private ArrayList<InterfazEmpleado> listaEmpleados=new ArrayList<InterfazEmpleado>();
+	private int[] posicion; //array que almacena los numeros de los empleados segun su posicion en la lista
 	
 	public Empresa(String nom, int tam){
 		this.nombre=nom;
 		this.tamano=tam;
 
-		
+		posicion=new int[tam];
 	}
 
+	@Override
+	public void nuevoEmpleado(String nom, float sueld) {
+		//crea un nuevo empleado asociado a la empresa. Utilizamos el 
+		//nœmero de empleado como ’ndice del array de empleados de la empresa.
+		
+		this.contador++;//cantidad de empleados en la empresa
+		this.numerEmpleado++;//numero para identificar al empleado
+		this.posicion[this.contador]=this.numerEmpleado;
+		Empleado emp=EmpleadoFactoria.getEmpleado(this, nom, sueld, this.contador);
+		this.listaEmpleados.add(emp);
+		
+		
+	}
+	
+	private int indiceEmpleado(int num){
+	
+		int p=Arrays.binarySearch(Arrays.copyOfRange(this.posicion, 0, this.contador),num);
+		return p;
+	}
+	
+	
 	@Override
 	public InterfazEmpleado getEmpleado(int num) {
 		//recibe como argumento un nœmero entero menor que el tama–o de la empresa, 
 		//y devuelve el correspondiente campo del array de empleados
-		System.out.println(num);
+
 		InterfazEmpleado empleado=null;
 		if(num<contador){
-			//System.out.println(empleados.length);
-			//empleado=empleados[num];
-			empleado=this.listaEmpleados.get(num);
+			
+			empleado=this.listaEmpleados.get(indiceEmpleado(num));
 		}
-	
 		return empleado;
 	}
 
@@ -47,10 +69,14 @@ public class Empresa implements InterfazEmpresa{
 		//y asigna null al correspondiente campo del array de empleados
 		
 		if(num<contador){
-			this.listaEmpleados.remove(num);
+			int pos=indiceEmpleado(num);
+			this.listaEmpleados.remove(pos);
 			this.contador--;
+			//arreglar el array de posiciones
+			for(int i=pos; i<this.tamano-1;i++){
+				this.posicion[i]=this.posicion[i+1];
+			}
 		}
-		
 	}
 
 	@Override
@@ -79,15 +105,6 @@ public class Empresa implements InterfazEmpresa{
 		return this.contador;
 	}
 
-	@Override
-	public void nuevoEmpleado(String nom, float sueld) {
-		//crea un nuevo empleado asociado a la empresa. Utilizamos el 
-		//nœmero de empleado como ’ndice del array de empleados de la empresa.
-		
-		this.contador++;
-		this.numerEmpleado++;
-		Empleado emp=EmpleadoFactoria.getEmpleado(this, nom, sueld, this.contador);
-		this.listaEmpleados.add(emp);
-	}
+	
 	
 }

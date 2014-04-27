@@ -13,7 +13,7 @@ import com.maialen.clases.Empresa;
 public class Pruebas {
 
 	Empresa empresa, empresa2;
-	Empleado emp1, emp2, emp3, emp4;
+	Empleado emp1, emp2, emp3, emp4, emp5, emp6;
 
 	
 	@Before
@@ -56,6 +56,23 @@ public class Pruebas {
 		
 		empresa2.despedirEmpleado(1);
 		assertEquals("Empleado 4", null, empresa2.getEmpleado(1));
+		
+		
+		empresa.nuevoEmpleado("empleado5", 1000);
+		empresa.nuevoEmpleado("empleado6", 1000);
+		
+		
+		
+		
+		emp5=(Empleado) empresa.getEmpleado(2);
+		emp6=(Empleado) empresa.getEmpleado(3);
+	
+		assertEquals("Empleado 5", 3, emp5.getNumEmpleado());
+		assertEquals("Empleado 6", 4, emp6.getNumEmpleado());
+		
+		assertEquals("Empleado 5", "empleado5", emp5.getNombre());
+		assertEquals("Empleado 6", "empleado6", emp6.getNombre());
+		
 	}
 	
 	

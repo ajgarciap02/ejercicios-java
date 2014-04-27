@@ -5,7 +5,7 @@ public class Empleado implements InterfazEmpleado{
 
 	protected String nombre;
 	protected float sueldo;
-	//los dos siguientes tienen que ser inmutables
+	/*los dos siguientes tienen que ser inmutables*/
 	protected int numero;
 	protected InterfazEmpresa empresa;
 	
@@ -64,6 +64,8 @@ public class Empleado implements InterfazEmpleado{
 	@Override
 	public void despedir() {
 		// TODO Auto-generated method stub
+		this.empresa.despedirEmpleado(this.numero);
+		this.empresa=null;
 		
 	}
 
