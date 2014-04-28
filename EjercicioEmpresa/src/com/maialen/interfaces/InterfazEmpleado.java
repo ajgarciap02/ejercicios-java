@@ -9,4 +9,5 @@ public interface InterfazEmpleado {
 	public String toString();
 	public void aumentarSueldo(int porcentaje); //tiene que ser final
 	public void despedir();
+	public void ascender();
 }

@@ -105,6 +105,30 @@ public class Empresa implements InterfazEmpresa{
 		return this.contador;
 	}
 
+	@Override
+	public void ascender(InterfazEmpleado ejecutivo) {
+		// el empleado con el numero que tiene el nuevo ejecutivo se reemplaza por el ejecutivo
+		int pos=indiceEmpleado(ejecutivo.getNumEmpleado());
+		this.listaEmpleados.set(pos, ejecutivo);
+	}
+
+	
+	//para ver toda la empresa
+	public String toString(){
+		String mensaje=this.nombre+"\n";
+		mensaje+="Lista de empleados\n";
+		
+		 for (InterfazEmpleado emp : this.listaEmpleados){
+			 mensaje+=emp.toString()+"\n";
+		 }
+		
+		 System.out.println(mensaje);
+		 
+		return mensaje;
+		
+		
+	}
+	
 	
 	
 }

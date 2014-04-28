@@ -18,6 +18,7 @@ public class Pruebas {
 	
 	@Before
 	public void setUp() throws Exception {
+		//inicializaciones
 		empresa=new Empresa("nombre1",10);
 		empresa2=new Empresa("segunda",4);
 		
@@ -30,9 +31,6 @@ public class Pruebas {
 		emp1=(Empleado) empresa.getEmpleado(0);
 		emp2=(Empleado) empresa.getEmpleado(1);
 		emp3=(Empleado) empresa2.getEmpleado(0);
-		
-		
-		
 		
 		
 		
@@ -72,6 +70,7 @@ public class Pruebas {
 		
 		assertEquals("Empleado 5", "empleado5", emp5.getNombre());
 		assertEquals("Empleado 6", "empleado6", emp6.getNombre());
+	
 		
 	}
 	
@@ -95,6 +94,14 @@ public class Pruebas {
 		assertEquals("Empleado 3", "1: empleado3 22222.0", emp3.toString());
 		emp1.aumentarSueldo(20);
 		assertEquals("Empleado 1", 1200.00, emp1.getSueldo(),0);
+		
+		
+	}
+	
+	@Test
+	public void testAscender() {
+		
+		
 		
 		
 	}

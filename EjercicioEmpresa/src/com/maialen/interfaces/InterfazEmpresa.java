@@ -10,6 +10,8 @@ public interface InterfazEmpresa {
 	
 	public void nuevoEmpleado(String nom, float sueld);
 	
+	public void ascender(InterfazEmpleado ejecutivo);
+	
 	//funciones propias
 	public int numeroContador();
 	public int nuevoContador();

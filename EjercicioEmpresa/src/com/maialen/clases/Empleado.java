@@ -1,6 +1,8 @@
 package com.maialen.clases;
 import com.maialen.interfaces.InterfazEmpleado;
 import com.maialen.interfaces.InterfazEmpresa;
+import factorias.EmpleadoFactoria;
+
 public class Empleado implements InterfazEmpleado{
 
 	protected String nombre;
@@ -73,6 +75,14 @@ public class Empleado implements InterfazEmpleado{
 	public String toString(){
 		String res=String.valueOf(this.numero)+": "+nombre+" "+String.valueOf(this.sueldo);
 		return res;
+	}
+	@Override
+	public void ascender() {
+		//que crea un nuevo objeto Ejecutivo con los datos del objeto Empleado actual, 
+		//y cambia la referencia en el array de personal de la empresa a la que pertenece dicho objeto
+		
+		Ejecutivo ejecutivo=EmpleadoFactoria.getEjecutivo(this.empresa, this.nombre, this.sueldo, this.numero);
+		this.empresa.ascender(ejecutivo);		
 	}
 
 }
