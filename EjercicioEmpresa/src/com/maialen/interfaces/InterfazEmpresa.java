@@ -8,7 +8,7 @@ public interface InterfazEmpresa {
 	public InterfazEmpleado getEmpleado(int num);
 	public void despedirEmpleado(int num);
 	
-	public void nuevoEmpleado(String nom, float sueld);
+	public InterfazEmpleado nuevoEmpleado(String nom, float sueld);
 	
 	public void ascender(InterfazEmpleado ejecutivo);
 	

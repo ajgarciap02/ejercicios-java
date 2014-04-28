@@ -30,25 +30,28 @@ public class Empresa implements InterfazEmpresa{
 	}
 
 	@Override
-	public void nuevoEmpleado(String nom, float sueld) {
+	public InterfazEmpleado nuevoEmpleado(String nom, float sueld) {
 		//crea un nuevo empleado asociado a la empresa. Utilizamos el 
 		//nœmero de empleado como ’ndice del array de empleados de la empresa.
 		
-		this.contador++;//cantidad de empleados en la empresa
-		this.numerEmpleado++;//numero para identificar al empleado
-		this.posicion[this.contador]=this.numerEmpleado;
-		Empleado emp=EmpleadoFactoria.getEmpleado(this, nom, sueld, this.contador);
-		this.listaEmpleados.add(emp);
-		
-		
+		if(contador<tamano){
+			this.contador++;//cantidad de empleados en la empresa
+			this.numerEmpleado++;//numero para identificar al empleado
+			this.posicion[this.contador]=this.numerEmpleado;
+			Empleado emp=EmpleadoFactoria.getEmpleado(this, nom, sueld, this.contador);
+			this.listaEmpleados.add(emp);
+			return emp;
+		}else{
+			//excepcion de sin sitio
+			
+		}
+		return null;
 	}
 	
 	private int indiceEmpleado(int num){
-	
 		int p=Arrays.binarySearch(Arrays.copyOfRange(this.posicion, 0, this.contador),num);
 		return p;
 	}
-	
 	
 	@Override
 	public InterfazEmpleado getEmpleado(int num) {
@@ -109,7 +112,9 @@ public class Empresa implements InterfazEmpresa{
 	public void ascender(InterfazEmpleado ejecutivo) {
 		// el empleado con el numero que tiene el nuevo ejecutivo se reemplaza por el ejecutivo
 		int pos=indiceEmpleado(ejecutivo.getNumEmpleado());
-		this.listaEmpleados.set(pos, ejecutivo);
+		if(pos>-1){
+			this.listaEmpleados.set(pos, ejecutivo);
+		}
 	}
 
 	

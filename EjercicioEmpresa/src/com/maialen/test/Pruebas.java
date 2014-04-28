@@ -99,7 +99,7 @@ public class Pruebas {
 	}
 	
 	@Test
-	public void testAscender() {
+	public void testAscenderEjecutivo() {
 		
 		
 		
