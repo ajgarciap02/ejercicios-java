@@ -9,5 +9,9 @@ public interface IJugable {
 	
 	public boolean validaNumero(int num);
 	
+	public void ponerNombre(String nombre);
+	public void ponerDescripcion(String descripcion);
+	
+	
 	
 }

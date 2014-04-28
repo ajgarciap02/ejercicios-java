@@ -80,4 +80,22 @@ public class JuegoAdivinaNumero extends Juego implements IJugable{
 		return true;
 	}
 
+
+
+
+	@Override
+	public void ponerNombre(String nom) {
+		// TODO Auto-generated method stub
+		this.nombre=nom;
+	}
+
+
+
+
+	@Override
+	public void ponerDescripcion(String descripcion) {
+		// TODO Auto-generated method stub
+		this.info=descripcion;
+	}
+
 }

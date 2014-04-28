@@ -5,12 +5,16 @@ import static org.junit.Assert.*;
 import org.junit.Before;
 import org.junit.Test;
 
+import com.maialen.clases.JuegoAdivinaImpar;
 import com.maialen.clases.JuegoAdivinaNumero;
+import com.maialen.clases.JuegoAdivinaPar;
 import com.maialen.factoria.Factoria;
 
 public class Pruebas {
 
 	JuegoAdivinaNumero game1, game2 ;
+	JuegoAdivinaImpar gameImpar;
+	JuegoAdivinaPar gamePar;
 	
 	@Before
 	public void setUp() throws Exception {
@@ -18,6 +22,8 @@ public class Pruebas {
 		game1 = Factoria.getJuegoAN(5, 8);
 		game2 = Factoria.getJuegoAN(6, 4);
 		
+		gameImpar = Factoria.getJuegoImpar(3, 3);
+		gamePar = Factoria.getJuegoPar(3, 4);
 		
 	}
 
@@ -57,6 +63,19 @@ public class Pruebas {
 		game1.muestraNombre();
 		assertEquals("Jugable", "Adivinar numero", game1.obtenerNombre());
 		//game1.juega();
+		
+		//juego par
+		
+		assertEquals("JuegoPar", 3, gamePar.obtenerVidas());
+		assertEquals("JuegoImpar", 3, gameImpar.obtenerVidas());
+		
+		assertTrue(gamePar.validaNumero(4));
+		assertFalse(gamePar.validaNumero(3));
+		assertTrue(gameImpar.validaNumero(3));
+		assertFalse(gameImpar.validaNumero(4));
+		assertEquals("JuegoPar", "Juego Adivina Par", gamePar.obtenerNombre());
+		assertEquals("JuegoImpar", "Juego Adivina Impar", gameImpar.obtenerNombre());
+		
 		
 	}
 
