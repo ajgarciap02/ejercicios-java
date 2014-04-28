@@ -19,11 +19,11 @@ public class Pruebas {
 	@Before
 	public void setUp() throws Exception {
 		
-		game1 = Factoria.getJuegoAN(5, 8);
-		game2 = Factoria.getJuegoAN(6, 4);
+		game1 = Factoria.getJuegoANP(5, 8);
+		game2 = Factoria.getJuegoANP(6, 4);
 		
-		gameImpar = Factoria.getJuegoImpar(3, 3);
-		gamePar = Factoria.getJuegoPar(3, 4);
+		gameImpar = Factoria.getJuegoImparP(3, 3);
+		gamePar = Factoria.getJuegoParP(3, 4);
 		
 	}
 
