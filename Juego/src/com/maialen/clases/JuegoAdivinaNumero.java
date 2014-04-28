@@ -17,6 +17,9 @@ public class JuegoAdivinaNumero extends Juego implements IJugable{
 		this.valorObjetivo=valor;
 	}
 
+	
+	
+	
 	@Override
 	public void juega() {
 		super.reiniciarPartida();
@@ -28,11 +31,13 @@ public class JuegoAdivinaNumero extends Juego implements IJugable{
 			Scanner entrada = new Scanner(System.in);
 			num = entrada.nextInt();
 			
-			if(num==this.valorObjetivo){
+			
+			
+			if( this.validaNumero(num) && num==this.valorObjetivo){
 				System.out.println("Acertaste");
 				this.actulizarRecord();
 				fin=true;
-			}else{
+			}else if(this.validaNumero(num)){
 				if(!this.quitarVida()){//ya no le quedan vidas
 					fin=true;
 				}else{
@@ -42,6 +47,8 @@ public class JuegoAdivinaNumero extends Juego implements IJugable{
 						System.out.println("El numero introducido es menor");
 					}
 				}
+			}else{
+				System.out.println("El numero no es valido");
 			}
 			
 		}
@@ -66,6 +73,11 @@ public class JuegoAdivinaNumero extends Juego implements IJugable{
 	public void muestraInfo() {
 		// TODO Auto-generated method stub
 		System.out.println(this.info);
+	}
+
+	@Override
+	public boolean validaNumero(int num) {
+		return true;
 	}
 
 }

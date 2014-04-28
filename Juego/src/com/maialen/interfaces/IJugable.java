@@ -7,5 +7,7 @@ public interface IJugable {
 	public void muestraNombre();
 	public void muestraInfo();
 	
+	public boolean validaNumero(int num);
+	
 	
 }

@@ -48,10 +48,16 @@ public class Pruebas {
 		assertEquals("Juego", 6, game2.obtenerVidas());
 		
 	}
-	
-public void testJugable() {
+	@Test
+	public void testJugable() {
 		
 		//pruebas para Jugable
+	
+		game1.muestraInfo();
+		game1.muestraNombre();
+		assertEquals("Jugable", "Adivinar numero", game1.obtenerNombre());
+		
+		//game1.juega();
 		
 	}
 
