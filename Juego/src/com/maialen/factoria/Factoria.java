@@ -1,6 +1,8 @@
 package com.maialen.factoria;
 
+import com.maialen.clases.JuegoAdivinaImpar;
 import com.maialen.clases.JuegoAdivinaNumero;
+import com.maialen.clases.JuegoAdivinaPar;
 
 
 
@@ -12,7 +14,14 @@ public class Factoria {
 		return j;
 	}
 	
-	
+	public static final JuegoAdivinaImpar getJuegoImpar(int numVidas, int numero ) {
+		JuegoAdivinaImpar j = new JuegoAdivinaImpar(numVidas, numero);
+		return j;
+	}
+	public static final JuegoAdivinaPar getJuegoPar(int numVidas, int numero ) {
+		JuegoAdivinaPar j = new JuegoAdivinaPar(numVidas, numero);
+		return j;
+	}
 	
 	
 	

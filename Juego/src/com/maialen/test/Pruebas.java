@@ -56,7 +56,6 @@ public class Pruebas {
 		game1.muestraInfo();
 		game1.muestraNombre();
 		assertEquals("Jugable", "Adivinar numero", game1.obtenerNombre());
-		
 		//game1.juega();
 		
 	}
