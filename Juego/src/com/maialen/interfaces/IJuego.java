@@ -1,4 +1,4 @@
-package interfaces;
+package com.maialen.interfaces;
 
 public interface IJuego {
 

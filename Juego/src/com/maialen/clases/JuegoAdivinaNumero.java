@@ -1,8 +1,9 @@
-package clases;
+package com.maialen.clases;
 
 import java.util.Scanner;
 
-import interfaces.IJugable;
+import com.maialen.interfaces.IJugable;
+
 
 public class JuegoAdivinaNumero extends Juego implements IJugable{
 	

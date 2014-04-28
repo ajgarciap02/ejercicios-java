@@ -1,6 +1,6 @@
-package clases;
+package com.maialen.clases;
 
-import interfaces.IJuego;
+import com.maialen.interfaces.IJuego;
 
 public abstract class Juego implements IJuego {
 	
