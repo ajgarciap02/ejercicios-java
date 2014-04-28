@@ -35,6 +35,7 @@ public class Aplicacion {
 	public static IJugable eligeJuego(){
 		System.out.println("Intoduce el numero de la opcion deseada");
 		int i=1;
+		int num;
 		for(IJugable j: juegos){
 			System.out.println("Opcion "+i+"  ******************");
 			j.muestraNombre();
@@ -45,7 +46,7 @@ public class Aplicacion {
 		//pedir un numero y leerlo del teclado
 		System.out.println("Introduce un numero:");
 		Scanner entrada = new Scanner(System.in);
-		int num = entrada.nextInt();
+		num = entrada.nextInt();
 		
 		if (num>juegos.size()){
 			return null;
