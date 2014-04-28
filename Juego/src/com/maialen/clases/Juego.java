@@ -42,8 +42,7 @@ public abstract class Juego implements IJuego {
 		}else{
 			
 		}
-		
-		return this.vidas==0;
+		return this.vidas!=0;
 	}
 
 	@Override
@@ -62,6 +61,7 @@ public abstract class Juego implements IJuego {
 			this.record=this.vidas;
 			men="Se ha batido el record. "+this.vidas;
 		}
+		System.out.println(men);
 		//return men;
 	}
 
