@@ -49,6 +49,7 @@ public class Aplicacion {
 			}
 		}
 		
+		System.out.println("Fin de la partida");
 		
 	}
 	
@@ -57,7 +58,7 @@ public class Aplicacion {
 		int i=1;
 		int num;
 		for(IJugable j: juegos){
-			System.out.println("\nOpcion "+i+"  ******************");
+			System.out.println("\n*Opcion "+i);
 			j.muestraNombre();
 			j.muestraInfo();
 			i++;
@@ -80,7 +81,7 @@ public class Aplicacion {
 	
 
 	/**
-	 * Add a new validator
+	 * Add a new juego
 	 */
 	public static void addJuego(IJugable j) {
 		if(!juegos.contains(j)) {
