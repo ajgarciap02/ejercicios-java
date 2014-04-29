@@ -10,15 +10,11 @@ import com.maialen.interfaces.IJuego;
 
 public class Aplicacion {
 
-	private static ArrayList<IJugable> juegos=new ArrayList<IJugable>();
+	private  ArrayList<IJugable> juegos=new ArrayList<IJugable>();
 	
-	public static void main(String[] args) {
+	public  void main(String[] args) {
 		// TODO Auto-generated method stub
-
-		addJuego(Factoria.getJuegoAN());
-		addJuego(Factoria.getJuegoImpar());
-		addJuego(Factoria.getJuegoPar());
-		
+		inicializar();
 		IJugable juego=null;
 		try {
 			juego = eligeJuego();
@@ -53,7 +49,14 @@ public class Aplicacion {
 		
 	}
 	
-	public static IJugable eligeJuego() throws JuegoExcepcion{
+	public void inicializar(){
+		addJuego(Factoria.getJuegoAN());
+		addJuego(Factoria.getJuegoImpar());
+		addJuego(Factoria.getJuegoPar());
+	}
+	
+	
+	public  IJugable eligeJuego() throws JuegoExcepcion{
 		System.out.println("Intoduce el numero de la opcion deseada");
 		int i=1;
 		int num;
@@ -66,13 +69,10 @@ public class Aplicacion {
 		System.out.println("Opcion "+i+" para terminar");
 		//pedir un numero y leerlo del teclado
 		System.out.println("Introduce un numero:");
-		/*
-		Scanner entrada = new Scanner(System.in);
-		num = entrada.nextInt();
-		*/
+
 		num=Teclado.leeEntero();
 		System.out.println("\n");
-		if (num>juegos.size()){
+		if (num>juegos.size() || num<1){
 			return null;
 		}else{
 			return juegos.get(num-1);
@@ -83,7 +83,7 @@ public class Aplicacion {
 	/**
 	 * Add a new juego
 	 */
-	public static void addJuego(IJugable j) {
+	public  void addJuego(IJugable j) {
 		if(!juegos.contains(j)) {
 			juegos.add(j);
 		}

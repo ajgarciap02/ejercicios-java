@@ -2,19 +2,25 @@ package com.maialen.test;
 
 import static org.junit.Assert.*;
 
+import java.io.ByteArrayInputStream;
+
 import org.junit.Before;
 import org.junit.Test;
 
+import com.maialen.clases.Aplicacion;
 import com.maialen.clases.JuegoAdivinaImpar;
 import com.maialen.clases.JuegoAdivinaNumero;
 import com.maialen.clases.JuegoAdivinaPar;
+import com.maialen.excepciones.JuegoExcepcion;
 import com.maialen.factoria.Factoria;
+import com.maialen.interfaces.IJugable;
 
 public class Pruebas {
 
 	JuegoAdivinaNumero game1, game2 ;
 	JuegoAdivinaImpar gameImpar;
 	JuegoAdivinaPar gamePar;
+	Aplicacion app;
 	
 	@Before
 	public void setUp() throws Exception {
@@ -24,6 +30,8 @@ public class Pruebas {
 		
 		gameImpar = Factoria.getJuegoImparP(3, 3);
 		gamePar = Factoria.getJuegoParP(3, 4);
+		
+		app=new Aplicacion();
 		
 	}
 
@@ -55,16 +63,23 @@ public class Pruebas {
 		
 	}
 	@Test
-	public void testJugable() {
+	public void testJugable() throws JuegoExcepcion {
 		
 		//pruebas para Jugable
 	
 		game1.muestraInfo();
 		game1.muestraNombre();
 		assertEquals("Jugable", "Adivinar numero", game1.obtenerNombre());
-		//game1.juega();
+		assertEquals("Jugable", "Instrucciones del juego", game1.obtenerInfo());
+
+		game1.ponerDescripcion("descripcion");
+		game1.ponerNombre("nombre");
 		
-		//juego par
+		assertEquals("Jugable", "nombre", game1.obtenerNombre());
+		assertEquals("Jugable", "descripcion", game1.obtenerInfo());
+		
+		assertTrue(game1.validaNumero(8));
+		assertTrue(game1.validaNumero(7));		
 		
 		assertEquals("JuegoPar", 3, gamePar.obtenerVidas());
 		assertEquals("JuegoImpar", 3, gameImpar.obtenerVidas());
@@ -79,7 +94,36 @@ public class Pruebas {
 	}
 	
 	@Test
-	public void testFactoria() {
+	public void testApp() throws JuegoExcepcion {
+		
+		app.inicializar();
+		
+		ByteArrayInputStream in= new ByteArrayInputStream("1".getBytes());
+		System.setIn(in);
+		IJugable juego= app.eligeJuego();
+		assertTrue(juego instanceof JuegoAdivinaNumero);
+		
+		in= new ByteArrayInputStream("2".getBytes());
+		System.setIn(in);
+		juego= app.eligeJuego();
+		assertTrue(juego instanceof JuegoAdivinaImpar);
+		
+		in= new ByteArrayInputStream("3".getBytes());
+		System.setIn(in);
+		juego= app.eligeJuego();
+		assertTrue(juego instanceof JuegoAdivinaPar);
+		
+		in= new ByteArrayInputStream("4".getBytes());
+		System.setIn(in);
+		juego= app.eligeJuego();
+		assertEquals( null, juego);
+		
+		in= new ByteArrayInputStream("0".getBytes());
+		System.setIn(in);
+		juego= app.eligeJuego();
+		assertEquals( null, juego);
+		
+		
 		
 		
 		

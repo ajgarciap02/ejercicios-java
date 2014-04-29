@@ -11,6 +11,7 @@ public interface IJugable {
 	public void muestraNombre();//muestra el nombre por consola
 	public void muestraInfo();//muestra la descripcion por consola
 	public String obtenerNombre(); //devuelve en nombre del juego
+	public String obtenerInfo(); //devuelve la informacion del juego
 	
 	
 	

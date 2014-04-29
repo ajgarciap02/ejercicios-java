@@ -51,6 +51,8 @@ public class JuegoAdivinaNumero extends Juego implements IJugable{
 		}
 	}
 
+	
+
 	@Override
 	public String obtenerNombre() {
 		//devuelve el nombre del juego
@@ -84,6 +86,11 @@ public class JuegoAdivinaNumero extends Juego implements IJugable{
 	@Override
 	public void ponerDescripcion(String descripcion) {
 		this.info=descripcion;
+	}
+
+	@Override
+	public String obtenerInfo() {
+		return this.info;
 	}
 
 }
