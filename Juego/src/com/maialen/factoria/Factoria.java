@@ -15,15 +15,23 @@ public class Factoria {
 	}
 	
 	public static final JuegoAdivinaImpar getJuegoImpar( ) {
-		JuegoAdivinaImpar j = new JuegoAdivinaImpar(numVidas, numeroAleatorio0_10());
-		return j;
-	}
-	public static final JuegoAdivinaPar getJuegoPar() {
-		JuegoAdivinaPar j = new JuegoAdivinaPar(numVidas, numeroAleatorio0_10());
+		int i=0;
+		while(esPar(i)){
+			i=numeroAleatorio0_10();
+		}
+		JuegoAdivinaImpar j = new JuegoAdivinaImpar(numVidas, i);
 		return j;
 	}
 	
-
+	public static final JuegoAdivinaPar getJuegoPar() {
+		int i=1;
+		while(!esPar(i)){
+			i=numeroAleatorio0_10();
+		}
+		JuegoAdivinaPar j = new JuegoAdivinaPar(numVidas, i);
+		return j;
+	}
+	
 	//para las pruebas
 	public static final JuegoAdivinaNumero getJuegoANP(int numVidas, int numero ) {
 		JuegoAdivinaNumero j = new JuegoAdivinaNumero(numVidas, numero);
@@ -39,9 +47,11 @@ public class Factoria {
 		return j;
 	}
 	
-	
 	public static int numeroAleatorio0_10(){
 		return (int) (10*Math.random());
+	}
+	public static boolean esPar(int num){
+		return num%2==0;
 	}
 	
 }

@@ -2,6 +2,7 @@ package com.maialen.clases;
 
 import java.util.Scanner;
 
+import com.maialen.excepciones.JuegoExcepcion;
 import com.maialen.interfaces.IJugable;
 
 
@@ -17,22 +18,19 @@ public class JuegoAdivinaNumero extends Juego implements IJugable{
 		this.valorObjetivo=valor;
 	}
 
-	
-	
-	
 	@Override
-	public void juega() {
+	public void juega() throws JuegoExcepcion {
 		super.reiniciarPartida();
 		boolean fin=false;
 		int num;
 		while(!fin && this.obtenerVidas()>0){
 			//pedir un numero y leerlo del teclado
 			System.out.println("Introduce un numero:");
+			/*
 			Scanner entrada = new Scanner(System.in);
 			num = entrada.nextInt();
-			
-			
-			
+			*/
+			num=Teclado.leeEntero();
 			if( this.validaNumero(num) && num==this.valorObjetivo){
 				System.out.println("Acertaste");
 				this.actulizarRecord();
@@ -42,59 +40,49 @@ public class JuegoAdivinaNumero extends Juego implements IJugable{
 					fin=true;
 				}else{
 					if(num>this.valorObjetivo){
-						System.out.println("El numero introducido es mayor");
+						System.out.println("El numero introducido es mayor que el objetivo");
 					}else{
-						System.out.println("El numero introducido es menor");
+						System.out.println("El numero introducido es menor que el objetivo");
 					}
 				}
 			}else{
 				System.out.println("El numero no es valido");
 			}
-			
 		}
-		
-
 	}
 
 	@Override
 	public String obtenerNombre() {
-		// TODO Auto-generated method stub
+		//devuelve el nombre del juego
 		return this.nombre;
 	}
 
 	@Override
 	public void muestraNombre() {
-		// TODO Auto-generated method stub
+		// imprime por consola el nombre del juego
 		System.out.println(this.nombre);
 		
 	}
 
 	@Override
 	public void muestraInfo() {
-		// TODO Auto-generated method stub
+		// imprime por consola la informacion del juego
 		System.out.println(this.info);
 	}
 
 	@Override
 	public boolean validaNumero(int num) {
+		//comprueba si el numero cumple las condiciones de entrada del jeugo
 		return true;
 	}
 
-
-
-
 	@Override
 	public void ponerNombre(String nom) {
-		// TODO Auto-generated method stub
 		this.nombre=nom;
 	}
 
-
-
-
 	@Override
 	public void ponerDescripcion(String descripcion) {
-		// TODO Auto-generated method stub
 		this.info=descripcion;
 	}
 

@@ -76,6 +76,12 @@ public class Pruebas {
 		assertEquals("JuegoPar", "Juego Adivina Par", gamePar.obtenerNombre());
 		assertEquals("JuegoImpar", "Juego Adivina Impar", gameImpar.obtenerNombre());
 		
+	}
+	
+	@Test
+	public void testFactoria() {
+		
+		
 		
 	}
 

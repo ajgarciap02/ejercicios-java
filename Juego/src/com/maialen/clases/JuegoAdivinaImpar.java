@@ -13,9 +13,4 @@ public class JuegoAdivinaImpar extends JuegoAdivinaNumero{
 	public boolean validaNumero(int num) {
 		return num%2!=0;
 	}
-	
-	
-	
-	
-	
 }

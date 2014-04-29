@@ -4,7 +4,6 @@ public class JuegoAdivinaPar extends JuegoAdivinaNumero{
 
 	public JuegoAdivinaPar(int numVidas, int valor) {
 		super(numVidas, valor);
-		// TODO Auto-generated constructor stub
 		this.ponerNombre("Juego Adivina Par");
 		this.ponerDescripcion("Introduce numeros pares");
 	}

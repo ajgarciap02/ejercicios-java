@@ -16,21 +16,25 @@ public abstract class Juego implements IJuego {
 	
 	@Override
 	public int obtenerVidas() {
+		//devuelve la cantidad de vidas actuales
 		return this.vidas;
 	}
 
 	@Override
 	public int obtenerVidasIniciales() {
+		//devuelve la cantidad de vidas iniciales
 		return this.vidasIniciales;
 	}
 
 	@Override
 	public int obtenerRecord() {
+		//devuelve el record actual de las partidas
 		return this.record;
 	}
 
 	@Override
 	public void muestraVidas() {
+		//imprime por pantalla la cantidad de vidas actuales
 		System.out.println(this.vidas);
 	}
 
@@ -47,7 +51,7 @@ public abstract class Juego implements IJuego {
 
 	@Override
 	public void reiniciarPartida() {
-		// pone las vidas al valor de las vidas iniciales
+		// pone las vidas actuales al valor de las vidas iniciales
 		this.vidas=this.vidasIniciales;
 	}
 
@@ -55,6 +59,7 @@ public abstract class Juego implements IJuego {
 	public void actulizarRecord() {
 		String men="";
 		// compara el valor actual del record con el numero de vidas
+		//si es igual o mayor actualiza el record
 		if(this.vidas==this.record){
 			men="Se ha alcanzado el record";
 		}else if(this.vidas>this.record){
@@ -62,7 +67,6 @@ public abstract class Juego implements IJuego {
 			men="Se ha batido el record. "+this.vidas;
 		}
 		System.out.println(men);
-		//return men;
 	}
 
 }
