@@ -3,6 +3,7 @@ package com.maialen.clases;
 import java.util.Scanner;
 
 import com.maialen.excepciones.JuegoExcepcion;
+import com.maialen.factoria.Factoria;
 import com.maialen.interfaces.IJugable;
 
 
@@ -93,4 +94,13 @@ public class JuegoAdivinaNumero extends Juego implements IJugable{
 		return this.info;
 	}
 
+	@Override
+	public void reiniciarPartida(){
+		super.reiniciarPartida();
+		this.valorObjetivo=Factoria.numeroAleatorio0_10();
+	}
+	
+	public void ponerObjetivo(int num){
+		this.valorObjetivo=num;
+	}
 }
