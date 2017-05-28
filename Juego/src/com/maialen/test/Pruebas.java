@@ -38,6 +38,9 @@ public class Pruebas {
 	@Test
 	public void testJuego() {
 		
+		//linea añadida
+		assertEquals("Juego", 7, game1.obtenerVidasIniciales());
+		
 		//pruebas para Juego
 		assertEquals("Juego", 5, game1.obtenerVidasIniciales());
 		assertEquals("Juego", 6, game2.obtenerVidasIniciales());
